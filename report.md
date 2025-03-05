@@ -1,43 +1,53 @@
 # 📊 Model Predictive Analytics Report
 
 ## 📝 **Pendahuluan**
-Proyek ini bertujuan untuk membangun model **Predictive Analytics** menggunakan **Random Forest Classifier** untuk memprediksi apakah seorang pengunjung akan melakukan pembelian berdasarkan aktivitas mereka di situs e-commerce.
+E-commerce saat ini berkembang pesat, dan memahami perilaku pengunjung situs web menjadi sangat penting dalam meningkatkan strategi pemasaran serta meningkatkan tingkat konversi penjualan. Dalam proyek ini, kami akan membangun model **Predictive Analytics** untuk memprediksi apakah seorang pengunjung situs e-commerce akan melakukan pembelian berdasarkan perilaku mereka di situs web.
+
+## 📂 **Domain Proyek**
+Dalam dunia bisnis e-commerce, **menganalisis perilaku pengunjung** sangat krusial untuk meningkatkan tingkat konversi penjualan. Banyak pengunjung yang hanya melihat-lihat produk tanpa melakukan transaksi. Dengan memanfaatkan data yang tersedia, kita bisa membangun **model prediktif** untuk mengetahui pengunjung mana yang kemungkinan besar akan melakukan pembelian.
+
+- **Masalah utama:** Banyak pengunjung yang tidak melakukan pembelian meskipun sudah mengunjungi beberapa halaman produk.
+- **Dampak bisnis:** Dengan mengetahui pola pengunjung yang berpotensi membeli, strategi pemasaran dapat lebih terarah.
+- **Solusi:** Menggunakan model machine learning untuk mengklasifikasikan pengunjung ke dalam dua kategori: yang akan membeli dan yang tidak.
+
+## 🔧 **Business Understanding**
+
+### **Problem Statement**
+E-commerce ingin mengetahui **peluang pengunjung melakukan pembelian** berdasarkan perilaku mereka di situs web.
+
+### **Goals**
+- Mengembangkan model klasifikasi yang mampu memprediksi apakah pengunjung akan melakukan pembelian atau tidak.
+- Memberikan insights kepada tim pemasaran agar dapat menargetkan pengunjung yang memiliki potensi tinggi untuk membeli produk.
+- Meningkatkan **konversi penjualan** dengan strategi pemasaran yang lebih terarah.
 
 ## 📂 **Dataset**
-Dataset yang digunakan adalah **Online Shoppers Purchasing Intention Dataset** yang diambil dari Kaggle. Dataset ini terdiri dari **12.330 sampel** dengan **18 fitur** yang merepresentasikan perilaku pengguna.
+Dataset yang digunakan adalah **Online Shoppers Purchasing Intention Dataset** yang diambil dari Kaggle. [Link Dataset](https://www.kaggle.com/datasets/imakash3011/online-shoppers-purchasing-intention-dataset)
 
-Fitur utama yang digunakan dalam model:
-- `Administrative`, `Informational`, `ProductRelated`: Jumlah halaman yang dikunjungi.
-- `BounceRates`, `ExitRates`: Persentase pengunjung yang meninggalkan situs setelah melihat satu halaman.
-- `SpecialDay`: Indikator kedekatan dengan hari spesial.
-- `Month`, `VisitorType`, `Weekend`: Informasi tentang waktu kunjungan dan jenis pengunjung.
-- `Revenue` (Target): Apakah pengunjung melakukan pembelian atau tidak.
+**Deskripsi Dataset:**
+- **Jumlah Data:** 12.330 baris, 18 kolom
+- **Jumlah Fitur:** 17 fitur prediktor, 1 fitur target (`Revenue`)
+- **Fitur Utama:**
+  - `Administrative`, `Informational`, `ProductRelated`: Jumlah halaman yang dikunjungi.
+  - `BounceRates`, `ExitRates`: Persentase pengunjung yang meninggalkan situs setelah melihat satu halaman.
+  - `SpecialDay`: Indikator kedekatan dengan hari spesial.
+  - `Month`, `VisitorType`, `Weekend`: Informasi tentang waktu kunjungan dan jenis pengunjung.
+  - `Revenue` (Target): Apakah pengunjung melakukan pembelian atau tidak.
 
-## 🔧 **Langkah-langkah Implementasi**
-### 1️⃣ **Business Understanding**
-Tujuan utama model ini adalah membantu bisnis e-commerce dalam mengidentifikasi pelanggan yang memiliki potensi lebih tinggi untuk melakukan pembelian, sehingga strategi pemasaran dapat dioptimalkan.
-
-### 2️⃣ **Data Understanding**
-- **Sumber Data**: Kaggle - [Online Shoppers Purchasing Intention Dataset](https://www.kaggle.com/datasets/imakash3011/online-shoppers-purchasing-intention-dataset)
-- **Jumlah Data**: 12.330 sampel dengan 18 fitur.
-- **Distribusi Target**: Seimbang antara pelanggan yang membeli dan tidak membeli.
-
-### 3️⃣ **Data Preparation**
-- **Mengisi Missing Values** hanya pada kolom numerik dengan rata-rata.
+## 🔧 **Data Preparation**
+- **Mengisi Missing Values** pada kolom numerik dengan rata-rata.
+- **Menghapus Duplikasi Data** untuk menghindari bias.
 - **Encoding variabel kategorikal** (`Month`, `VisitorType`, `Weekend`) dengan one-hot encoding.
 - **Standarisasi fitur numerik** menggunakan `StandardScaler`.
 - **Membagi dataset** menjadi training (80%) dan testing (20%).
 
-### 4️⃣ **Model Development**
-- **Algoritma**: Random Forest Classifier
-- **Parameter utama**: `n_estimators=100`
+## 🤖 **Model Development**
+- **Algoritma yang digunakan:** Random Forest Classifier
+- **Parameter utama:** `n_estimators=100`
+- **Alasan pemilihan:** Random Forest memberikan akurasi tinggi dan lebih tahan terhadap overfitting dibanding model decision tree tunggal.
 
-### 5️⃣ **Evaluation**
-- **Akurasi Model**: 87.5%
-- **Precision, Recall, F1-score** untuk setiap kelas.
-- **Confusion Matrix** untuk memvisualisasikan performa model.
+## 📊 **Evaluation**
+Hasil evaluasi model:
 
-## 📊 **Hasil Evaluasi**
 | Metrik        | Nilai |
 |--------------|-------|
 | Akurasi      | 87.5% |
@@ -46,7 +56,7 @@ Tujuan utama model ini adalah membantu bisnis e-commerce dalam mengidentifikasi 
 | F1-Score     | 84.1% |
 
 - **Confusion Matrix:**
-![Confusion Matrix](confusion_matrix.png)
+![Confusion Matrix](https://github.com/user-attachments/assets/80f302fe-fe59-4258-82a8-c8c38d885907)
 
 ## 📌 **Kesimpulan**
 - Model **Random Forest Classifier** menunjukkan hasil yang cukup baik dengan **akurasi 87.5%**.
