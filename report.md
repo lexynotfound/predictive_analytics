@@ -14,25 +14,30 @@ Fitur utama yang digunakan dalam model:
 - `Revenue` (Target): Apakah pengunjung melakukan pembelian atau tidak.
 
 ## 🔧 **Langkah-langkah Implementasi**
-1. **Data Preprocessing**
-   - Mengisi **missing values** pada kolom numerik dengan rata-rata.
-   - One-hot encoding untuk variabel kategorikal seperti `Month`, `VisitorType`, dan `Weekend`.
-   - Standarisasi fitur numerik agar skala data seragam.
+### 1️⃣ **Business Understanding**
+Tujuan utama model ini adalah membantu bisnis e-commerce dalam mengidentifikasi pelanggan yang memiliki potensi lebih tinggi untuk melakukan pembelian, sehingga strategi pemasaran dapat dioptimalkan.
 
-2. **Splitting Dataset**
-   - Dataset dibagi menjadi **80% training** dan **20% testing**.
+### 2️⃣ **Data Understanding**
+- **Sumber Data**: Kaggle - [Online Shoppers Purchasing Intention Dataset](https://www.kaggle.com/datasets/imakash3011/online-shoppers-purchasing-intention-dataset)
+- **Jumlah Data**: 12.330 sampel dengan 18 fitur.
+- **Distribusi Target**: Seimbang antara pelanggan yang membeli dan tidak membeli.
 
-3. **Pelatihan Model**
-   - Menggunakan **Random Forest Classifier** dengan `n_estimators=100`.
+### 3️⃣ **Data Preparation**
+- **Mengisi Missing Values** hanya pada kolom numerik dengan rata-rata.
+- **Encoding variabel kategorikal** (`Month`, `VisitorType`, `Weekend`) dengan one-hot encoding.
+- **Standarisasi fitur numerik** menggunakan `StandardScaler`.
+- **Membagi dataset** menjadi training (80%) dan testing (20%).
 
-4. **Evaluasi Model**
-   - Metrik yang digunakan:
-     - **Akurasi**: Menunjukkan sejauh mana model dapat mengklasifikasikan data dengan benar.
-     - **Precision, Recall, dan F1-score**: Memberikan insight terkait prediksi kelas positif dan negatif.
-     - **Confusion Matrix**: Memvisualisasikan performa model dalam mengklasifikasikan data.
+### 4️⃣ **Model Development**
+- **Algoritma**: Random Forest Classifier
+- **Parameter utama**: `n_estimators=100`
+
+### 5️⃣ **Evaluation**
+- **Akurasi Model**: 87.5%
+- **Precision, Recall, F1-score** untuk setiap kelas.
+- **Confusion Matrix** untuk memvisualisasikan performa model.
 
 ## 📊 **Hasil Evaluasi**
-
 | Metrik        | Nilai |
 |--------------|-------|
 | Akurasi      | 87.5% |
@@ -54,4 +59,3 @@ Fitur utama yang digunakan dalam model:
 - **Menganalisis lebih dalam variabel yang paling berpengaruh** terhadap keputusan pembelian pelanggan.
 
 🚀 **Model siap digunakan untuk analisis bisnis dan optimasi strategi pemasaran e-commerce!**
-

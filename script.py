@@ -8,13 +8,15 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-# 📌 Download dataset from Kaggle
+# 📌 Download dataset dari Kaggle
 path = kagglehub.dataset_download("imakash3011/online-shoppers-purchasing-intention-dataset")
-print("Path to dataset files:", path)
+print("Path ke dataset:", path)
 
 # 📌 Load Dataset
 df = pd.read_csv(f"{path}/online_shoppers_intention.csv")
 print("Jumlah data:", len(df))
+
+print(df.head())
 
 # 📌 Data Preparation
 # Mengisi missing values hanya untuk kolom numerik
