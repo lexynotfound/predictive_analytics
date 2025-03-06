@@ -34,29 +34,63 @@ Dataset yang digunakan adalah **Online Shoppers Purchasing Intention Dataset** y
   - `Revenue` (Target): Apakah pengunjung melakukan pembelian atau tidak.
 
 
-## 📂 **Data Understanding**
-Dataset yang digunakan adalah **Online Shoppers Purchasing Intention Dataset** yang diambil dari Kaggle.  
-📌 **Tautan Dataset**: [Kaggle - Online Shoppers Purchasing Intention Dataset](https://www.kaggle.com/datasets/imakash3011/online-shoppers-purchasing-intention-dataset)
+# Simpan laporan sebagai file Markdown (.md)
+report_content = """# 📊 Model Predictive Analytics Report
 
-### **1️⃣ Jumlah Data**
+## 📝 Pendahuluan
+E-commerce saat ini berkembang pesat, dan memahami perilaku pengunjung situs web menjadi sangat penting dalam meningkatkan strategi pemasaran serta meningkatkan tingkat konversi penjualan. Dalam proyek ini, kami akan membangun model **Predictive Analytics** untuk memprediksi apakah seorang pengunjung situs e-commerce akan melakukan pembelian berdasarkan perilaku mereka di situs web.
+
+## 📂 Domain Proyek
+Dalam dunia bisnis e-commerce, **menganalisis perilaku pengunjung** sangat krusial untuk meningkatkan tingkat konversi penjualan. Banyak pengunjung yang hanya melihat-lihat produk tanpa melakukan transaksi. Dengan memanfaatkan data yang tersedia, kita bisa membangun **model prediktif** untuk mengetahui pengunjung mana yang kemungkinan besar akan melakukan pembelian.
+
+- **Masalah utama:** Banyak pengunjung yang tidak melakukan pembelian meskipun sudah mengunjungi beberapa halaman produk.
+- **Dampak bisnis:** Dengan mengetahui pola pengunjung yang berpotensi membeli, strategi pemasaran dapat lebih terarah.
+- **Solusi:** Menggunakan model machine learning untuk mengklasifikasikan pengunjung ke dalam dua kategori: yang akan membeli dan yang tidak.
+
+## 🔧 Business Understanding
+
+### Problem Statement
+E-commerce ingin mengetahui **peluang pengunjung melakukan pembelian** berdasarkan perilaku mereka di situs web.
+
+### Goals
+- Mengembangkan model klasifikasi yang mampu memprediksi apakah pengunjung akan melakukan pembelian atau tidak.
+- Memberikan insights kepada tim pemasaran agar dapat menargetkan pengunjung yang memiliki potensi tinggi untuk membeli produk.
+- Meningkatkan **konversi penjualan** dengan strategi pemasaran yang lebih terarah.
+
+## 📂 Data Understanding
+### Sumber Data
+Dataset yang digunakan adalah **Online Shoppers Purchasing Intention Dataset** yang diambil dari Kaggle.  
+📉 **Tautan Dataset**: [Kaggle - Online Shoppers Purchasing Intention Dataset](https://www.kaggle.com/datasets/imakash3011/online-shoppers-purchasing-intention-dataset)
+
+### 1. Jumlah Data
 - **Jumlah Baris:** 12.330
 - **Jumlah Kolom:** 18
 
-### **2️⃣ Kondisi Data**
-- **Missing Values:** Ditemukan pada beberapa kolom numerik dan sudah diisi dengan nilai rata-rata.
-- **Data Duplikat:** Tidak ditemukan duplikasi data dalam dataset.
-- **Outliers:** Data pendapatan (MonthlyIncome) menunjukkan adanya beberapa outlier yang telah dianalisis dengan Box Plot.
+### 2. Kondisi Data
+- **Missing Values:** Tidak ditemukan nilai yang hilang dalam dataset.
+- **Data Duplikat:** Tidak ditemukan data duplikat.
+- **Outliers:** Beberapa fitur numerik memiliki outlier yang telah dianalisis menggunakan metode Box Plot. Outlier ini tidak dihapus karena bisa menjadi informasi penting bagi model prediktif.
 
-### **3️⃣ Uraian Seluruh Fitur dalam Dataset**
+### 3. Uraian Seluruh Fitur dalam Dataset
+Dataset terdiri dari 18 fitur dengan deskripsi sebagai berikut:
+
 | Nama Fitur         | Deskripsi |
 |--------------------|------------|
 | `Administrative`  | Jumlah halaman administratif yang dikunjungi |
+| `Administrative_Duration` | Waktu yang dihabiskan pada halaman administratif |
 | `Informational`   | Jumlah halaman informasi yang dikunjungi |
+| `Informational_Duration` | Waktu yang dihabiskan pada halaman informasi |
 | `ProductRelated`  | Jumlah halaman produk yang dikunjungi |
+| `ProductRelated_Duration` | Waktu yang dihabiskan pada halaman produk |
 | `BounceRates`     | Persentase pengunjung yang langsung keluar setelah satu halaman |
 | `ExitRates`       | Persentase pengunjung yang meninggalkan situs |
+| `PageValues`      | Estimasi nilai halaman yang dikunjungi berdasarkan pendapatan transaksi |
 | `SpecialDay`      | Indikator apakah kunjungan dekat dengan hari spesial |
 | `Month`           | Bulan saat kunjungan dilakukan |
+| `OperatingSystems` | Sistem operasi yang digunakan oleh pengunjung |
+| `Browser`         | Jenis browser yang digunakan |
+| `Region`          | Wilayah geografis pengunjung |
+| `TrafficType`     | Sumber lalu lintas kunjungan |
 | `VisitorType`     | Jenis pengunjung (baru/kembali) |
 | `Weekend`         | Apakah kunjungan terjadi di akhir pekan |
 | `Revenue` (Target) | Apakah pengunjung melakukan pembelian atau tidak |
