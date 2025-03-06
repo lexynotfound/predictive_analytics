@@ -66,9 +66,9 @@ Dataset yang digunakan adalah **Online Shoppers Purchasing Intention Dataset** y
 Tahapan preprocessing yang dilakukan adalah:
 1️⃣ **Mengisi Missing Values** → Menggunakan rata-rata untuk mengisi kolom numerik.  
 2️⃣ **Menghapus Duplikasi Data** → Tidak ditemukan data duplikat dalam dataset.  
-3️⃣ **Encoding Variabel Kategorikal** → Mengubah `Month`, `VisitorType`, dan `Weekend` menjadi format numerik dengan one-hot encoding.  
-4️⃣ **Standarisasi Fitur Numerik** → Menggunakan `StandardScaler` untuk menormalkan fitur numerik.  
-5️⃣ **Membagi Dataset** → Data dibagi menjadi **training set (80%)** dan **test set (20%)**.
+3️⃣ **Encoding Variabel Kategorikal** → Mengubah `Month`, `VisitorType`, dan `Weekend` menjadi format numerik dengan one-hot encoding.
+4️⃣ **Membagi Dataset** → Data dibagi menjadi **training set (80%)** dan **test set (20%)**.
+5️⃣ **Standarisasi Fitur Numerik** → Menggunakan `StandardScaler` untuk menormalkan fitur numerik.
 
 
 ## 🤖 **Model Development**
@@ -103,18 +103,18 @@ Dalam proyek ini, kami menggunakan beberapa metrik evaluasi untuk mengukur kiner
 ### **Hasil Evaluasi Model**
 Hasil evaluasi model pada dataset uji adalah sebagai berikut:
 
-| Metrik        | Nilai |
-|--------------|-------|
-| **Akurasi**  | 87.5% |
-| **Precision** | 85.3% |
-| **Recall**   | 82.9% |
-| **F1-Score** | 84.1% |
+| Metrik        | Nilai  |
+|--------------|--------|
+| **Akurasi**  | 89.25% |
+| **Precision** | 91.0%  |
+| **Recall**   | 96.0%  |
+| **F1-Score** | 94.0%  |
 
 - **Confusion Matrix:**
 ![Confusion Matrix](https://github.com/user-attachments/assets/80f302fe-fe59-4258-82a8-c8c38d885907)
 
 ## 📌 **Kesimpulan**
-- Model **Random Forest Classifier** menunjukkan hasil yang cukup baik dengan **akurasi 87.5%**.
+- Model **Random Forest Classifier** menunjukkan hasil yang cukup baik dengan **akurasi 89.25%**.
 - Model ini dapat digunakan oleh bisnis e-commerce untuk **mengidentifikasi pelanggan potensial** yang memiliki kemungkinan tinggi untuk melakukan pembelian.
 - Dapat dilakukan **penyesuaian hyperparameter** untuk meningkatkan performa model lebih lanjut.
 
